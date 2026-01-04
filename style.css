@@ -1,0 +1,234 @@
+/* ================= RESET ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: #ffffff;
+  color: #333;
+  padding-top: 80px;
+}
+
+/* ================= HEADER ================= */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: 700;
+  color: #c75a7a;
+}
+
+nav a {
+  margin-left: 22px;
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+}
+
+/* ================= HERO (BALANCED) ================= */
+.hero {
+  position: relative;
+  height: 60vh;              /* balanced */
+  max-height: 520px;         /* prevents huge screens */
+  background: url("images/hero1.jpg") center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+}
+
+.hero-content {
+  position: relative;
+  text-align: center;
+  color: #fff;
+  max-width: 760px;
+  padding: 0 20px;
+}
+
+.hero-content h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 42px;
+  margin-bottom: 12px;
+}
+
+.hero-content p {
+  font-size: 17px;
+  margin-bottom: 24px;
+}
+
+.btn {
+  padding: 12px 30px;
+  background: #c75a7a;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+/* ================= SECTIONS ================= */
+.section {
+  padding: 80px 40px;        /* more breathing room */
+}
+
+.section.light {
+  background: #f7f7f7;
+}
+
+.section h2 {
+  text-align: center;
+  margin-bottom: 40px;
+  color: #c75a7a;
+  font-size: 30px;
+}
+
+/* ================= SERVICES ================= */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 28px;
+}
+
+.card {
+  background: #ffffff;
+  padding: 32px;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+  font-size: 15px;
+}
+
+/* ================= GALLERY (BALANCED) ================= */
+.insta-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+.insta-grid img {
+  width: 100%;
+  height: 200px;             /* perfect medium */
+  object-fit: cover;
+  border-radius: 14px;
+}
+
+/* ================= VIDEOS (BALANCED) ================= */
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 26px;
+}
+
+.video-grid video {
+  width: 100%;
+  height: 240px;             /* watchable size */
+  border-radius: 16px;
+  background: #000;
+  box-shadow: 0 10px 28px rgba(0,0,0,0.15);
+}
+
+/* ================= FORM ================= */
+.form {
+  max-width: 560px;
+  margin: auto;
+}
+
+.form input,
+.form textarea {
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 14px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 15px;
+}
+
+.form button {
+  width: 100%;
+  padding: 14px;
+  background: #c75a7a;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+/* ================= FOOTER ================= */
+.footer {
+  background: #1f1f1f;
+  color: #eee;
+  text-align: center;
+  padding: 32px 20px;
+}
+
+.footer p {
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+.footer a {
+  color: #c75a7a;
+  text-decoration: none;
+}
+
+/* ================= WHATSAPP ================= */
+.whatsapp {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #25d366;
+  color: #fff;
+  font-size: 22px;
+  padding: 14px;
+  border-radius: 50%;
+  text-decoration: none;
+}
+
+/* ================= MOBILE ================= */
+@media (max-width: 768px) {
+  header {
+    padding: 0 20px;
+  }
+
+  nav {
+    display: none;
+  }
+
+  .hero {
+    height: 48vh;
+    max-height: 420px;
+  }
+
+  .hero-content h1 {
+    font-size: 32px;
+  }
+
+  .insta-grid img {
+    height: 170px;
+  }
+
+  .video-grid video {
+    height: 200px;
+  }
+}

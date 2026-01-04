@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MissPetals Admin Login</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    body{
+      margin:0;
+      height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:#f4f6f8;
+      font-family:Poppins,sans-serif;
+    }
+
+    .login-box{
+      background:#fff;
+      padding:40px;
+      width:100%;
+      max-width:380px;
+      border-radius:12px;
+      box-shadow:0 10px 30px rgba(0,0,0,.1);
+      text-align:center;
+    }
+
+    h1{
+      margin-bottom:5px;
+      color:#c75a7a;
+    }
+
+    p{
+      color:#777;
+      font-size:14px;
+      margin-bottom:25px;
+    }
+
+    input{
+      width:100%;
+      padding:14px;
+      margin-bottom:15px;
+      border-radius:8px;
+      border:1px solid #ddd;
+      font-size:14px;
+    }
+
+    button{
+      width:100%;
+      padding:14px;
+      border:none;
+      border-radius:8px;
+      background:#c75a7a;
+      color:#fff;
+      font-size:15px;
+      font-weight:600;
+      cursor:pointer;
+    }
+
+    button:hover{
+      background:#b14d6a;
+    }
+
+    .error{
+      color:#e74c3c;
+      font-size:13px;
+      margin-top:10px;
+      display:none;
+    }
+  </style>
+</head>
+<body>
+
+<div class="login-box">
+  <h1>MissPetals Admin</h1>
+  <p>Login to manage orders, products & bookings</p>
+
+  <input type="password" id="password" placeholder="Enter password">
+  <button onclick="login()">Login</button>
+
+  <div id="error" class="error">Invalid password</div>
+</div>
+
+<script>
+function login(){
+  const pass = document.getElementById("password").value;
+  const error = document.getElementById("error");
+
+  const adminPass = localStorage.getItem("mp_admin_pass") 
+    ? atob(localStorage.getItem("mp_admin_pass")) 
+    : "misspetals2025";
+
+  const assistantPass = "petalsstaff";
+
+  if(pass === adminPass){
+    localStorage.setItem("mp_admin_auth","yes");
+    localStorage.setItem("mp_admin_role","admin");
+    location.href = "admin.html";
+  }
+  else if(pass === assistantPass){
+    localStorage.setItem("mp_admin_auth","yes");
+    localStorage.setItem("mp_admin_role","assistant");
+    location.href = "admin.html";
+  }
+  else{
+    error.style.display = "block";
+  }
+}
+</script>
+
+</body>
+</html>

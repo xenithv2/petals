@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Shop — MissPetals & Events</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <!-- Fonts (same as other pages) -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="shop.css">
+</head>
+<body>
+
+<header>
+  <div class="logo">MissPetals & Events</div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="shop.html" class="active">Shop</a>
+    <a href="index.html#contact">Contact</a>
+  </nav>
+  <button id="darkToggle" class="dark-toggle">🌙</button>
+</header>
+
+<main class="shop-main">
+  <section class="shop-hero">
+    <h1>MissPetals Shop</h1>
+    <p>Flowers, décor & full event packages — curated for memorable moments.</p>
+  </section>
+
+  <section class="shop-controls">
+    <div class="categories">
+      <button data-cat="all" class="cat-btn active">All</button>
+      <button data-cat="bouquets" class="cat-btn">Bouquets</button>
+      <button data-cat="decor" class="cat-btn">Decor</button>
+      <button data-cat="packages" class="cat-btn">Packages</button>
+      <button data-cat="misc" class="cat-btn">Gifts & Extras</button>
+    </div>
+
+    <div class="search-wrap">
+      <input id="searchInput" placeholder="Search products (eg. rose, arch, wedding)" />
+    </div>
+
+    <div class="cart-toggle">
+      <button id="openCart">Cart (<span id="cartCount">0</span>)</button>
+    </div>
+  </section>
+
+  <section id="productsGrid" class="products-grid">
+    <!-- products injected by JS -->
+  </section>
+</main>
+
+<!-- CART SIDEBAR -->
+<aside id="cartSidebar" class="cart-sidebar">
+  <h3>Your Cart</h3>
+  <div id="cartItems" class="cart-items"></div>
+
+  <div class="cart-summary">
+    <div>Subtotal: <strong id="cartSubtotal">UGX 0</strong></div>
+    <div>Delivery: <strong id="cartDelivery">UGX 0</strong></div>
+    <div class="total">Total: <strong id="cartTotal">UGX 0</strong></div>
+  </div>
+
+  <div class="cart-actions">
+    <input id="customerName" placeholder="Your name" />
+    <input id="customerPhone" placeholder="Phone (WhatsApp preferred)" />
+    <input id="customerAddress" placeholder="Address or event venue" />
+    <textarea id="customerNote" placeholder="Any special instructions"></textarea>
+
+    <button id="sendOrder" class="buy-btn">Order via WhatsApp</button>
+    <button id="closeCart" class="close-btn">Close</button>
+  </div>
+</aside>
+
+<!-- Footer (contact + social) -->
+<footer class="footer-shop">
+  <div class="footer-inner">
+    <div>
+      <h4>MissPetals & Events</h4>
+      <p>📞 Calls: 0771365511  •  📲 WhatsApp: 0751327051</p>
+      <p>TikTok: <a href="https://www.tiktok.com/@misspetalsevents?_r=1&_t=ZM-9282zNWy1tr" target="_blank">@misspetalsevents</a></p>
+    </div>
+    <div>
+      <h4>Support</h4>
+      <p><a href="index.html#contact">Bookings & Enquiries</a></p>
+    </div>
+  </div>
+  <div class="foot-bottom">© 2025 MissPetals & Events</div>
+</footer>
+
+<script src="shop.js"></script>
+</body>
+</html>

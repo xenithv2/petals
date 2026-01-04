@@ -1,0 +1,126 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background: black;
+}
+
+/* ✅ BACKGROUND VIDEO */
+.bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+}
+
+/* ✅ DARK CINEMA OVERLAY */
+.video-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, rgba(0,0,0,0.3), rgba(0,0,0,0.9));
+  z-index: -1;
+}
+
+/* ✅ MAIN STAGE */
+.landing-container {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  perspective: 1400px;
+}
+
+/* ✅ 3D FLOWER CROWN */
+.crown-3d {
+  position: absolute;
+  top: 18%;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: spin 14s linear infinite;
+  z-index: 3;
+}
+
+.crown-3d img {
+  width: 280px;
+  filter: drop-shadow(0 20px 50px rgba(255, 120, 170, 0.9));
+}
+
+/* ✅ LOGO */
+.logo-3d {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 4;
+  animation: float 6s ease-in-out infinite;
+}
+
+.logo-3d img {
+  width: 260px;
+  filter: drop-shadow(0 20px 60px rgba(255, 160, 200, 0.8));
+}
+
+/* ✅ TEXT */
+.landing-text {
+  position: absolute;
+  bottom: 12%;
+  width: 100%;
+  text-align: center;
+  color: white;
+  z-index: 5;
+}
+
+.landing-text h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 56px;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
+  text-shadow: 0 12px 40px rgba(199, 90, 122, 1);
+}
+
+.landing-text p {
+  font-size: 18px;
+  opacity: 0.9;
+}
+
+/* ✅ BUTTON */
+.enter-btn {
+  margin-top: 22px;
+  display: inline-block;
+  padding: 15px 40px;
+  border-radius: 40px;
+  background: linear-gradient(135deg, #c75a7a, #9e3e57);
+  color: white;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 16px 45px rgba(199, 90, 122, 0.9);
+  transition: 0.3s;
+}
+
+.enter-btn:hover {
+  transform: scale(1.1);
+}
+
+/* ✅ ANIMATIONS */
+@keyframes spin {
+  from { transform: translateX(-50%) rotateY(0deg); }
+  to { transform: translateX(-50%) rotateY(360deg); }
+}
+
+@keyframes float {
+  0% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(-18px); }
+  100% { transform: translateX(-50%) translateY(0); }
+}

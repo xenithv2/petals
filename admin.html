@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MissPetals Admin</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+<script>
+  if(localStorage.getItem("mp_admin_auth") !== "yes"){
+    location.href = "admin-login.html";
+  }
+</script>
+
+<header class="admin-header">
+  <div>
+    <h1>MissPetals Admin</h1>
+    <small id="roleBadge"></small>
+  </div>
+  <button id="logoutBtn" class="btn ghost">Logout</button>
+</header>
+
+<main class="admin-main">
+  <aside class="admin-nav">
+    <button class="tab-btn active" data-tab="dashboard">Dashboard</button>
+    <button class="tab-btn" data-tab="products">Products</button>
+    <button class="tab-btn" data-tab="orders">Orders</button>
+    <button class="tab-btn" data-tab="bookings">Bookings</button>
+    <button class="tab-btn" data-tab="gallery">Gallery</button>
+    <button class="tab-btn" data-tab="settings" data-role-only="admin">Settings</button>
+  </aside>
+
+  <section class="admin-panel">
+
+    <!-- DASHBOARD -->
+    <div class="tab-panel" id="dashboard">
+      <div class="dash-cards">
+        <div class="dash-card danger">
+          <h3 id="outStockCount">0</h3>
+          <p>Out of Stock</p>
+        </div>
+        <div class="dash-card warning">
+          <h3 id="lowStockCount">0</h3>
+          <p>Low Stock</p>
+        </div>
+      </div>
+
+      <h3>Products Needing Attention</h3>
+      <div id="lowStockList"></div>
+    </div>
+
+    <!-- PRODUCTS -->
+    <div class="tab-panel" id="products" style="display:none">
+      <h2>Inventory</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Product</th>
+            <th>Price</th>
+            <th>Stock</th>
+            <th>Low Alert</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody id="productsTable"></tbody>
+      </table>
+    </div>
+
+    <!-- ORDERS -->
+    <div class="tab-panel" id="orders" style="display:none">
+      <h2>Orders</h2>
+      <div id="ordersList"></div>
+    </div>
+
+    <!-- BOOKINGS -->
+    <div class="tab-panel" id="bookings" style="display:none">
+      <h2>Bookings</h2>
+      <div id="bookingsList"></div>
+    </div>
+
+    <!-- GALLERY -->
+    <div class="tab-panel" id="gallery" style="display:none">
+      <input id="galleryImgInput" placeholder="images/photo.jpg">
+      <button id="addGalleryImg" class="btn">Add</button>
+      <div id="galleryList"></div>
+    </div>
+
+    <!-- SETTINGS -->
+    <div class="tab-panel" id="settings" style="display:none">
+      <input id="setting_wa" placeholder="WhatsApp number">
+      <input id="setting_call" placeholder="Call number">
+      <input id="setting_pass" type="password" placeholder="New admin password">
+      <button id="saveSettings" class="btn">Save Settings</button>
+      <button id="savePass" class="btn ghost">Change Password</button>
+    </div>
+
+  </section>
+</main>
+
+<script src="admin.js"></script>
+</body>
+</html>
+
+
+
+
+
+
